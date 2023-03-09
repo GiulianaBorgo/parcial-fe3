@@ -1,0 +1,47 @@
+<Form *onSubmit= {handleAddedPedido}*/>
+
+import { useState } from "react"
+
+function Form(*props*){
+    const [inputValue, setInputValue] = useState('');
+    const [inputValue2, setInputValue2] = useState('');
+
+    function handleChange (e){
+        const withoutSpaces = e.target.value.trim()
+        setInputValue(e.target.value.trim())
+    }
+
+    function handleChange2 (e){
+        setInputValue2(e.target.value.trim())
+    }
+
+    function handleSubmit (e){
+        e.preventDefault()
+       * props.onSubmit(inputValue)*
+    }
+
+
+    return(
+        <form onSubmit={handleSubmit}>
+            <input type='text' placeholder="Ingrese su nombre" value={inputValue} onChange={handleChange}></input>
+            <input type='text' placeholder="Ingrese su animal favorito" value={inputValue2} onChange={handleChange2}></input>
+            <button type='submit'>Agregar</button>
+        </form>
+    )
+}
+
+export default Form
+
+
+
+const withoutSpaces = e.target.value.trim();3
+        if(withoutSpaces.length > 2){
+            setInputValue(withoutSpaces)
+        } else {
+            return 'Por favor chequea que la información sea correcta'
+        }
+
+
+        <Card name='giuliana' animal='conejo'></Card>
+
+       
